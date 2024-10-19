@@ -1,0 +1,23 @@
+{
+  "name": "alex-rss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo Ok",
+    "start": "node index.js",
+    "commands": "node commands.js",
+    "setup:service": "cp application.bot.alex-rss.service /etc/systemd/system/application.bot.alex-rss.service && nano /etc/systemd/system/application.bot.alex-rss.service",
+    "docker:setup": "npm run build",
+    "docker:build": "docker build -t alex-rss ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^1.7.1",
+    "discord.js": "^14.16.3",
+    "rss-parser": "^3.13.0"
+  }
+}
