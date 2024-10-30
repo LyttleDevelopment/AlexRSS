@@ -24,3 +24,11 @@ jobs:
 
       - name: Push API Docker image to GitHub Container Registry
         run: docker push ghcr.io/lyttledevelopment/alex-rss:main
+
+      - name: Deploy Image to CapRover
+        uses: caprover/deploy-from-github@v1.1.2
+        with:
+          server: "${{ secrets.CAPROVER_SERVER }}"
+          app: "${{ secrets.CAPROVER_APP_NAME }}"
+          token: "${{ secrets.CAPROVER_APP_TOKEN }}"
+          image: "ghcr.io/lyttledevelopment/alex-rss:main"
